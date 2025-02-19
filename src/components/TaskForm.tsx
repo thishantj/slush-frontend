@@ -19,7 +19,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ setTasks }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    fetch('http://localhost:5011/tasks', {
+    fetch('https://slush-backend-iypg.onrender.com/tasks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description }),

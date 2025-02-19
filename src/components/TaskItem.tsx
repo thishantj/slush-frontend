@@ -3,7 +3,7 @@ import axios from "axios";
 
 const TaskItem: React.FC<{ task: any; onDelete: (id: number) => void }> = ({ task, onDelete }) => {
   const handleDelete = () => {
-    axios.delete(`http://localhost:5011/tasks/${task.id}`).then(() => onDelete(task.id));
+    axios.delete(`https://slush-backend-iypg.onrender.com/tasks/${task.id}`).then(() => onDelete(task.id));
   };
 
   return (

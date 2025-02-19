@@ -14,13 +14,13 @@ const TaskList: React.FC = () => {
   const [isFormVisible, setFormVisible] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:5011/tasks')
+    fetch('https://slush-backend-iypg.onrender.com/tasks')
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);
 
   const toggleCompletion = (id: number) => {
-    fetch(`http://localhost:5011/tasks/toggle-completion/${id}`, {
+    fetch(`https://slush-backend-iypg.onrender.com/tasks/toggle-completion/${id}`, {
       method: 'PUT',
     })
       .then((res) => res.json())
@@ -33,7 +33,7 @@ const TaskList: React.FC = () => {
   };
 
   const deleteTask = (id: number) => {
-    fetch(`http://localhost:5011/tasks/${id}`, { method: 'DELETE' })
+    fetch(`https://slush-backend-iypg.onrender.com/tasks/${id}`, { method: 'DELETE' })
       .then(() => setTasks(tasks.filter((task) => task.id !== id)))
       .catch((err) => console.error('Error deleting task:', err));
   };
